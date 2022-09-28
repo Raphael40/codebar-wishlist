@@ -1,4 +1,6 @@
 /* Exercise 1: Wish list */
+wishList=[];
+
 function addToList(item) {
     $('ol#items').append('<li>' + item + '<span class="label pending">Pending</span>' + '</li>')
 }
@@ -13,6 +15,11 @@ function updateTotal() {
 
 $(document).ready(function () {
 
+    // Attemp to persist wislist items in array on page reload
+   /*  wishList.forEach(function (item) {
+        addToList(item);
+    }); */ 
+
     updateTotal();
 
     $(document).on('click', '#add-to-list', function () {
@@ -20,6 +27,7 @@ $(document).ready(function () {
         $('#item').focus();
         $('#item').val('');    
         addToList(form_input);
+        // wishList.push(form_input);
         updateTotal();
     });
 
