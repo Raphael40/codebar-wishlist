@@ -14,7 +14,6 @@ $(document).on('click', '#add-to-list', function() {
 $(document).on('click', '.pending', function() {
     let li_node = $(this).parent();
     li_node.append("<span class='label success'>Done!</span>");
-    li_node.remove('.pending');
-
+    $('.pending').remove();
+    li_node.addClass('completed');
 });
-
